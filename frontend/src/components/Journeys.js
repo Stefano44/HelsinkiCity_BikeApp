@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react'
 
 function Journeys() {
     const [journeys, setJourneys ] = useState([])
+    const [page, setPage] = useState(1)
+    const size = 100
 
     useEffect(() => {
-        fetch('http://localhost:3001/api/journeys')
+        fetch(`http://localhost:3001/api/journeys?page=${page}&size=${size}`)
           .then(response => response.json())
           .then(data => setJourneys(data))
     
-      }, [])
+      }, [page])
     
     
       return (
@@ -21,6 +23,9 @@ function Journeys() {
               </li>
             ))}
           </ul>
+
+          <button onClick={() => setPage(page => Math.max(page - 1, 1))}>Perviouos Page</button>
+          <button onClick={() => setPage(page => page + 1)}>Next Page</button>
         </div>
       )
 }
