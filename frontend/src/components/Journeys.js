@@ -11,6 +11,12 @@ function Journeys() {
           .then(data => setJourneys(data))
     
       }, [page])
+
+    const convertDurationToMinSec = (sec) => {
+      const minutes = Math.floor(sec / 60)
+      const seconds = sec % 60
+      return `${minutes} min ${seconds} sec`
+    }
     
     
       return (
@@ -19,7 +25,7 @@ function Journeys() {
           <ul>
             {journeys.map(journey => (
               <li key={journey.id}>
-                Departure: {journey.departure_station_name} - Return: {journey.return_station_name} - Distance: {journey.covered_distance_m} m - Duration: {journey.duration_sec} sec
+                Departure: {journey.departure_station_name} - Return: {journey.return_station_name} - Distance: {journey.covered_distance_m} m - Duration: {convertDurationToMinSec(journey.duration_sec)}
               </li>
             ))}
           </ul>
