@@ -7,7 +7,10 @@ function Stations() {
     useEffect(() => {
         fetch('http://localhost:3001/api/stations')
           .then(response => response.json())
-          .then(data => setStations(data))
+          .then(data => {
+            const sortedData = data.sort((a, b) => a.nimi.localeCompare(b.nimi));
+            setStations(sortedData);
+          })
     
       }, [])
 
