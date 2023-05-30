@@ -1,0 +1,95 @@
+body {
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+}
+
+.App {
+    margin: auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+.App-header {
+    background-color: #add8e6;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    color: #00008b;
+    font-size: 2.8em;
+}
+
+h2 {
+    text-align: center;
+}
+
+input {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #e0ffff;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+button {
+    background-color: #add8e6;
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #87cefa;
+}
+
+
+.main-button, .pagination-button {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    width: 200px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+}
+
+
+.main-button {
+    margin-top: 50px;
+    background-color: #87cefa;
+    font-size: 1.5em;
+    padding: 20px 30px
+}
+
+.main-button:hover {
+    background-color: #add8e6;
+}
+
+.pagination-button {
+    background-color: #add8e6;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1.2em;
+}
+
+.pagination-button:hover {
+    background-color: #87cefa;
+}
+
+.center-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
