@@ -3,7 +3,7 @@ const db = require('../config/db')
 
 journeyRouter.get('/', async (req, res) => {
     const page = parseInt(req.query.page) || 1
-    const size = parseInt(req.query.size) || 50;
+    const size = parseInt(req.query.size) || 50
 
     const offset = (page - 1) * size
     try {

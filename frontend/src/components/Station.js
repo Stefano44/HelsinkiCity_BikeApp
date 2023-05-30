@@ -33,9 +33,9 @@ function Station() {
     return (
         <div>
             <h1>{station.nimi}</h1>
-            <p>Address: {address}</p>
-            <p>Journeys starting from this station: {station.num_departures}</p>
-            <p>Journeys ending at this station: {station.num_returns}</p>
+            <p><b>Address: </b>{address}</p>
+            <p><b>Journeys starting from this station: </b>{station.num_departures}</p>
+            <p><b>Journeys ending at this station: </b>{station.num_returns}</p>
 
             <MapContainer center={position} zoom={15} style={{ height: "400px", width: "400px" }}>
                 <TileLayer
