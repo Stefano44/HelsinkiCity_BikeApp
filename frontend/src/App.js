@@ -2,9 +2,9 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom'
 import "./App.css"
 
-import Journeys from './components/Journeys';
-import Stations from './components/Stations';
-import Station from './components/Station';
+import Journeys from './components/Journeys'
+import Stations from './components/Stations'
+import Station from './components/Station'
 
 
 function App() {
@@ -25,8 +25,8 @@ function App() {
             <Route path="/" element={
               <div className="center-div">
                 <h2>Welcome to Helsinki City Bike App</h2>
-                <p><Link to="/journeys" className="main-button">View Journeys</Link></p>
-                <p><Link to="/stations" className="main-button">View Stations</Link></p>
+                <p><Link to="/journeys" className="main-button">Journeys</Link></p>
+                <p><Link to="/stations" className="main-button">Stations</Link></p>
               </div>
             }/>
           </Routes>
@@ -35,4 +35,4 @@ function App() {
   )
 }
 
-export default App;
+export default App

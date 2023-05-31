@@ -3,11 +3,12 @@ import { useParams} from 'react-router-dom'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 
-
+// Station component fetches and displays information about a single station
 function Station() {
     const { id } = useParams()
     const [station, setStation] = useState(null)
 
+    // Fetch station data
     useEffect(() => {
         fetch(`http://localhost:3001/api/stations/${id}`)
           .then(response => {
@@ -25,11 +26,13 @@ function Station() {
 
     if (!station) return 'Loading...'
 
-    const position = [Number(station.y), Number(station.x)]
 
-    const city = station.kaupunki === "Espoo" ? "Espoo" : "Helsinki";
+    // Define the station position and address for the map
+    const position = [Number(station.y), Number(station.x)]
+    const city = station.kaupunki === "Espoo" ? "Espoo" : "Helsinki"
     const address = `${station.osoite}, ${city}`
 
+    // Render station information and a map with a marker for the station
     return (
         <div>
             <h1>{station.nimi}</h1>

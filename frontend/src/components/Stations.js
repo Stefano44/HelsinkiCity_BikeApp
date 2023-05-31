@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Link} from 'react-router-dom'
+
+// Stations component fetches and displays the list of stations
 function Stations() {
     const [stations, setStations ] = useState([])
     const [search, setSearch] = useState("")
 
+    // Fetch stations data
     useEffect(() => {
         fetch('http://localhost:3001/api/stations')
           .then(response => response.json())
@@ -13,13 +16,15 @@ function Stations() {
           })
     
       }, [])
-
+    
+    // Filter stations based on search input
     const filteredStations = stations.filter(station =>
         station.nimi.toLowerCase().includes(search.toLowerCase())
       )
 
     
     return (
+       // Render the list of stations and a search box
       <div>
         <h1>Stations</h1>
         <input
