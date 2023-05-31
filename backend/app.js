@@ -1,5 +1,7 @@
 const express = require('express')
 const app = express()
+const path = require('path');
+
 
 const cors = require('cors')
 
@@ -9,9 +11,10 @@ const journeyRoutes = require('./routes/journeys')
 // Using cors middleware
 app.use(cors())
 
-// Root route that sends "Hello World!"
+app.use(express.static(path.join(__dirname, 'build')))
+
 app.get('/', (req, res) => {
-    res.send('<h1>Hello World!</h1>')
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
 // Using imported routes
